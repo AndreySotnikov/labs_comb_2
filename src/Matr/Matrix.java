@@ -18,18 +18,6 @@ public class Matrix {
     private int[][] tmp;
     private final int size;
     
-   /* public Matrix (DefaultTableModel model){
-        size = model.getColumnCount()+1;
-        matr = new int[size+1][size+1];
-        tmp = new int[size+1][size+1];
-        for (int i=0;i<size;i++){
-            matr[i][0] = 0;
-            matr[0][i] = 0;
-        }            
-        for (int i=1;i<size;i++)
-            for (int j=1;j<size;j++)
-                matr[i][j] = Integer.parseInt((String)model.getValueAt(i-1, j-1));
-    } */
     public Matrix(int n){
        size = n+1;
        matr = new int[size-1][size-1];
@@ -56,11 +44,6 @@ public class Matrix {
     }
     
     public void getPartSum(){
-        /*tmp[0][0] = matr[0][0];
-        for (int i=1;i<size-1;i++){
-            tmp[0][i] = tmp[0][i-1] + matr[0][i];
-            tmp[i][0] = tmp[i-1][0] + matr[i][0];
-        }*/
         for (int i = 1;i<size;i++)
             for (int j=1;j<size;j++)
                 tmp[i][j] = tmp[i-1][j]+tmp[i][j-1]-tmp[i-1][j-1]+matr[i-1][j-1];
