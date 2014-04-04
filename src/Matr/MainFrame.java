@@ -113,14 +113,6 @@ public class MainFrame extends javax.swing.JFrame {
        try{
             matr = new Matrix(Integer.parseInt(matrsize.getText()));
             matr.printToTable(model);
-          /* Random rand = new Random();
-           model.setColumnCount(Integer.parseInt(matrsize.getText()));
-           model.setRowCount(Integer.parseInt(matrsize.getText()));
-           for (int i = 0; i < model.getRowCount();i++)
-               for (int j = 0; j < model.getColumnCount();j++)
-                   model.setValueAt(Integer.toString(-500 + rand.nextInt(1000)), i, j);
-           find.setEnabled(true);*/
-                   
         }catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null,"Некорректные размеры матрицы");
             find.setEnabled(false);
