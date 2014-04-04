@@ -54,7 +54,6 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         find.setText("Найти");
-        find.setEnabled(false);
         find.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 findActionPerformed(evt);
@@ -112,15 +111,15 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void randomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_randomActionPerformed
        try{
-            //matr = new Matrix(Integer.parseInt(jTextField1.getText()));
-            //matr.printToTable(model);
-           Random rand = new Random();
+            matr = new Matrix(Integer.parseInt(matrsize.getText()));
+            matr.printToTable(model);
+          /* Random rand = new Random();
            model.setColumnCount(Integer.parseInt(matrsize.getText()));
            model.setRowCount(Integer.parseInt(matrsize.getText()));
            for (int i = 0; i < model.getRowCount();i++)
                for (int j = 0; j < model.getColumnCount();j++)
                    model.setValueAt(Integer.toString(-500 + rand.nextInt(1000)), i, j);
-           find.setEnabled(true);
+           find.setEnabled(true);*/
                    
         }catch(NumberFormatException ex){
             JOptionPane.showMessageDialog(null,"Некорректные размеры матрицы");
@@ -129,7 +128,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_randomActionPerformed
 
     private void findActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findActionPerformed
-        matr = new Matrix(model);
+        //matr = new Matrix(model);
         Fragment f = new Fragment(); 
         long start = System.currentTimeMillis();
         matr.task(f);
